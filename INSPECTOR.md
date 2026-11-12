@@ -10,7 +10,7 @@ Manager's context gets full (logs, transcripts, files) and the owner's words and
 
 Manager posts one review request:
 - `OWNER:` the owner's exact words (Thai, from speech-to-text)
-- `DRAFT:` what Manager wants to send (dispatch / report / notebook change / reply)
+- `DRAFT:` what Manager wants to send: **every reply to the owner**, every dispatch, report and notebook change
 - `TO:` who gets it
 
 Read only the newest unanswered request. Do not read old rooms or logs unless a fact must be checked.
@@ -21,6 +21,7 @@ Read only the newest unanswered request. Do not read old rooms or logs unless a 
    - Question → answer only, no action. Order → act. "Don't do anything" → nothing.
    - Who should do it: Manager itself (owner said "you do it") or a department.
    - Words with more than one meaning → Manager must ask the owner, not guess.
+   - Questions to the owner: allowed only for decisions that are truly the owner's (rule 18). A question Manager can answer itself (notebooks, repos, transcripts, asking the owning session) or decide itself (record it in DECISIONS.md) → FIX. Fewer questions is better.
    - Speech-to-text glossary: "กิจรับ" / "คิดครับ" = GitHub · "พร้อม" / "พร้อมท์" = prompt · "แคป" = app · "depository" = repository.
 2. **Rules**: does it break any rule in Manager's `RULES.md` (private repo `norrawitro/project-manager-for-c-l-a-u-d-e`: attach it to your session read-only)? Name the rule number.
 3. **Facts**: names, paths, session ids, versions, statuses — check the source when you can (repo files, notebooks). Unverified claim → FIX.
