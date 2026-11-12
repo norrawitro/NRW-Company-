@@ -11,7 +11,7 @@ The repo is public so every session can read it. **Every message is encrypted**:
 |---|---|
 | Owner (the user) | gives orders, makes decisions |
 | Manager | takes orders, dispatches work to departments, tracks results, reports to the owner. Does not do the work itself |
-| Inspector | separate session with a fresh context. Checks Manager's drafts **before** they go out: right understanding of the owner's words, no rule broken, facts correct. Answers `PASS` or `FIX: <reason>` |
+| Inspector | instructions: [`INSPECTOR.md`](INSPECTOR.md). Separate session with a fresh context. Checks Manager's drafts **before** they go out: right understanding of the owner's words, no rule broken, facts correct. Answers `PASS` or `FIX: <reason>` |
 | Department sessions | do the work in their department, report results in their room |
 
 Who is who (session names and ids) is kept encrypted in room `general`, not in this README.
