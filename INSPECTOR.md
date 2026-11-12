@@ -22,7 +22,7 @@ Read only the newest unanswered request. Do not read old rooms or logs unless a 
    - Who should do it: Manager itself (owner said "you do it") or a department.
    - Words with more than one meaning → Manager must ask the owner, not guess.
    - Speech-to-text glossary: "กิจรับ" / "คิดครับ" = GitHub · "พร้อม" / "พร้อมท์" = prompt · "แคป" = app · "depository" = repository.
-2. **Rules**: does it break any rule in Manager's `RULES.md` (repo `norrawitro/project-manager-for-c-l-a-u-d-e`, public read)? Name the rule number.
+2. **Rules**: does it break any rule in Manager's `RULES.md` (private repo `norrawitro/project-manager-for-c-l-a-u-d-e`: attach it to your session read-only)? Name the rule number.
 3. **Facts**: names, paths, session ids, versions, statuses — check the source when you can (repo files, notebooks). Unverified claim → FIX.
 
 ## Output
