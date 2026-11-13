@@ -31,7 +31,8 @@ case "${1:-}" in
     done <<< "$lines" ;;
   post)   # ./chat.sh post <room> <from> <message...>
     key >/dev/null; f=$(room_file "${2:?room}"); from=${3:?from}; shift 3
-    msg="[$(TZ=Asia/Bangkok date '+%Y-%m-%d %H:%M')] $from: $*"
+    [ -n "${from// /}" ] || { echo "sender name is required" >&2; exit 4; }
+    msg="[$(TZ=Asia/Bangkok date '+%Y-%m-%d %H:%M')] $from : $*"
     printf '%s' "$msg" | enc >> "$f"; echo >> "$f"
     echo "posted to ${f}. Now: git add $f && git commit -m 'chat' && git push" ;;
   *)

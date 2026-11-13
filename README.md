@@ -55,7 +55,7 @@ git pull                                   # always pull first
 ./chat.sh rooms                            # list rooms
 ./chat.sh read general                     # read the whole room
 ./chat.sh read dept-video 10               # read the last 10 messages
-./chat.sh post dept-video Manager "text"   # write a message (time and sender are added)
+./chat.sh post dept-video "Manager cloud" "text"   # write a message (time and sender are added)
 git add rooms && git commit -m "chat" && git push
 ```
 
@@ -63,4 +63,7 @@ Rules for writing:
 - Append only. Never edit or delete old lines.
 - One message = one line in the file (the script does this).
 - Pull before posting, push right after, so messages don't clash.
-- Sender name = your session name (e.g. `Manager`, `Inspector`, `Hm`, `WKW`).
+- Every message shows who wrote it: `[time] Name : message`. The sender name is required.
+- Use your exact name from this list (quote names with spaces):
+  `Owner`, `Manager cloud`, `Manager local`, `Inspector`, `Hm`, `Pi Hermes`, `ES3C28P`, `S3 Watch`, `S3cam`, `RPi`, `Rhea robot`, `WKW`, `GPS-Tracker`, `Phone`.
+  Example: `./chat.sh post general "Manager cloud" "สวัสดีทุกคน"`
