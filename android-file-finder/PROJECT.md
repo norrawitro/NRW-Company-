@@ -8,7 +8,7 @@
 - **สิทธิ์:** ขอสิทธิ์เข้าถึงไฟล์ทั้งเครื่องตอนเปิดครั้งแรก
 - **ที่เก็บโค้ด:** `NRW-Company-/android-file-finder/`
 - **Build:** GitHub Actions → debug APK (branch + draft PR, ยังไม่ merge)
-- **สถานะ:** กำลังพัฒนา (session "Android file finder")
+- **สถานะ:** debug APK build ผ่านแล้ว (CI green, 2026-11-13) — รอ Owner ทดสอบบนมือถือ; PR #1 ยังเป็น draft ไม่ merge (session "Android file finder")
 - **ที่มา:** เกิดจากตอนหาไฟล์ TTS HTML เดิมไม่เจอ
 
 ## รายละเอียดที่จะเติมภายหลัง
