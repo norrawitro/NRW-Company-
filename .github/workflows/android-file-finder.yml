@@ -29,7 +29,10 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - uses: android-actions/setup-android@v3
+      # ubuntu-latest already ships the Android SDK ($ANDROID_HOME); AGP downloads
+      # any missing platform/build-tools itself. (setup-android@v3 failed in sdkmanager.)
+      - name: Point Gradle at the preinstalled Android SDK
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
       - uses: gradle/actions/setup-gradle@v4
         with:
