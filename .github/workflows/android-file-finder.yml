@@ -1,0 +1,48 @@
+name: Android file finder (debug APK)
+
+on:
+  push:
+    paths:
+      - 'android-file-finder/**'
+      - '.github/workflows/android-file-finder.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: android-file-finder
+    steps:
+      # Only check out the app folder; rooms/ and chat files are never fetched.
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            android-file-finder
+          sparse-checkout-cone-mode: true
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # ubuntu-latest already ships the Android SDK ($ANDROID_HOME); AGP downloads
+      # any missing platform/build-tools itself. (setup-android@v3 failed in sdkmanager.)
+      - name: Point Gradle at the preinstalled Android SDK
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Build debug APK
+        run: gradle assembleDebug --no-daemon --stacktrace
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: file-finder-debug-apk
+          path: android-file-finder/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
